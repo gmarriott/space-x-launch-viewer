@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/space-x-launch-viewer/static/css/main.a0c54f3d.chunk.css",
+    "main.js": "/space-x-launch-viewer/static/js/main.c1ef3a9f.chunk.js",
+    "main.js.map": "/space-x-launch-viewer/static/js/main.c1ef3a9f.chunk.js.map",
+    "runtime-main.js": "/space-x-launch-viewer/static/js/runtime-main.33ca233a.js",
+    "runtime-main.js.map": "/space-x-launch-viewer/static/js/runtime-main.33ca233a.js.map",
+    "static/js/2.c934f9f9.chunk.js": "/space-x-launch-viewer/static/js/2.c934f9f9.chunk.js",
+    "static/js/2.c934f9f9.chunk.js.map": "/space-x-launch-viewer/static/js/2.c934f9f9.chunk.js.map",
+    "index.html": "/space-x-launch-viewer/index.html",
+    "static/css/main.a0c54f3d.chunk.css.map": "/space-x-launch-viewer/static/css/main.a0c54f3d.chunk.css.map",
+    "static/js/2.c934f9f9.chunk.js.LICENSE.txt": "/space-x-launch-viewer/static/js/2.c934f9f9.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/space-x-launch-viewer/static/media/BrandonGrotesque-RegularItalic.78a0e531.woff2",
+    "static/media/launch-home.b539e3f9.png": "/space-x-launch-viewer/static/media/launch-home.b539e3f9.png",
+    "static/media/launch-home@2x.2ac07a63.png": "/space-x-launch-viewer/static/media/launch-home@2x.2ac07a63.png",
+    "static/media/launch-home@3x.8f2f8d9e.png": "/space-x-launch-viewer/static/media/launch-home@3x.8f2f8d9e.png",
+    "static/media/spacex-logo.e755fcbf.png": "/space-x-launch-viewer/static/media/spacex-logo.e755fcbf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.33ca233a.js",
+    "static/js/2.c934f9f9.chunk.js",
+    "static/css/main.a0c54f3d.chunk.css",
+    "static/js/main.c1ef3a9f.chunk.js"
+  ]
+}
