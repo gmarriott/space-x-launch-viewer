@@ -4,8 +4,6 @@ import { GetLaunchesAPI, GetRocketAPI } from "../../api/GetLaunches";
 export const launchContextDefaults = {
   listLaunches: Function,
   items: [],
-  listYears: Function,
-  years: [],
   sort: false,
   setSort: Function,
   filter: "",
@@ -34,19 +32,20 @@ export const LaunchProvider = ({ children }) => {
           setLoading(true);
           setSort(false);
           try {
-                const response = await GetLaunchesAPI();
+            const response = await GetLaunchesAPI();
 
-                Promise.all(response.map(async (item) => {
-                    const rocket = await GetRocketAPI(item.rocket);
-                    item.rocket_name = rocket.name;
-                })).then(() => {
-                    setLoading(false);
-                    setItems(response);
-                })
-            }
-            catch {
-                setError(true);
-            }
+            Promise.all(
+              response.map(async (item) => {
+                const rocket = await GetRocketAPI(item.rocket);
+                item.rocket_name = rocket.name;
+              })
+            ).then(() => {
+              setLoading(false);
+              setItems(response);
+            });
+          } catch {
+            setError(true);
+          }
         }, []),
         items,
         sort,
