@@ -1,5 +1,5 @@
-import React from "react";
-import Moment from "moment";
+import React from 'react';
+import Moment from 'moment';
 
 interface LaunchItemProps {
   index: number;
@@ -9,13 +9,13 @@ interface LaunchItemProps {
   rocket_name: string;
 }
 
-export const LaunchItem: React.FC<LaunchItemProps> = ({
+export const LaunchItem = ({
   index,
   flight_number,
   name,
   date_utc,
   rocket_name,
-}) => {
+}: LaunchItemProps) => {
   return (
     <li key={index} className="launch-item">
       <div>
@@ -25,7 +25,7 @@ export const LaunchItem: React.FC<LaunchItemProps> = ({
       <div className="end-container">
         <span className="item-details">
           <span className="launch-date">
-            {Moment(date_utc).format("Do MMMM YYYY")}
+            {Moment(date_utc).format('Do MMMM YYYY')}
           </span>
           <span className="rocket-name">{rocket_name}</span>
         </span>

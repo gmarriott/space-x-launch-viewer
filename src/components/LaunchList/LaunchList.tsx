@@ -1,6 +1,6 @@
-import React from "react";
-import Moment from "moment";
-import { LaunchItem } from "../LaunchItem";
+import React from 'react';
+import Moment from 'moment';
+import { LaunchItem } from '../LaunchItem';
 
 interface Launch {
   flight_number: number;
@@ -17,24 +17,24 @@ interface LaunchListProps {
   loading: boolean;
 }
 
-export const LaunchList: React.FC<LaunchListProps> = ({
+export const LaunchList = ({
   launchItems,
   filter,
   sort,
   hasError,
   loading,
-}) => {
+}: LaunchListProps) => {
   let filteredItems = [...launchItems];
 
   let launches = filteredItems.sort((a, b) => {
-    const x = Moment(a.date_utc).format("YYYYMMDD");
-    const y = Moment(b.date_utc).format("YYYYMMDD");
+    const x = Moment(a.date_utc).format('YYYYMMDD');
+    const y = Moment(b.date_utc).format('YYYYMMDD');
     return sort ? Number(y) - Number(x) : Number(x) - Number(y);
   });
 
-  if (filter !== "") {
+  if (filter !== '') {
     launches = launches.filter((launch) => {
-      let launchYear = Moment(launch.date_utc).format("YYYY");
+      let launchYear = Moment(launch.date_utc).format('YYYY');
       return launchYear === filter;
     });
   }
