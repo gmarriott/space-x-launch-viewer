@@ -5,7 +5,7 @@ export const launchContextDefaults = {
   listLaunches: Function,
   items: [],
   sort: false,
-  setSort: Function,
+  setSort: Boolean,
   filter: "",
   setFilter: Function,
   loading: false,

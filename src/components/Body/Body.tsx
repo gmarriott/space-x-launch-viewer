@@ -7,7 +7,8 @@ import { Select } from "../Select";
 import { useLaunchContext } from "../../contexts/LaunchContext";
 
 export const Body = () => {
-  const { filter, setSort, sort, items, hasError, loading } = useLaunchContext();
+  const { filter, setSort, sort, items, hasError, loading } =
+    useLaunchContext();
 
   return (
     <div className="app__body">
@@ -24,16 +25,22 @@ export const Body = () => {
           <Select
             classes="select"
             label={LABEL.FILTER_BY_YEAR}
-            testId="filter-button-test"
+            error={false}
+            allowDisabledState={false}
           />
           <Button
-            filter={filter}
             classes="button button--sort"
             onClick={() => setSort(!sort)}
             label={sort ? LABEL.ASC : LABEL.DESC}
           />
         </div>
-        <LaunchList items={items} filter={filter} sort={sort} hasError={hasError} loading={loading} />
+        <LaunchList
+          launchItems={items}
+          filter={filter}
+          sort={sort}
+          hasError={hasError}
+          loading={loading}
+        />
       </div>
     </div>
   );

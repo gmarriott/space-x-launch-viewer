@@ -1,10 +1,21 @@
 import React from "react";
 import Moment from "moment";
 
-export const LaunchItem = ({ item, index }) => {
+interface LaunchItemProps {
+  index: number;
+  flight_number: number;
+  name: string;
+  date_utc: string;
+  rocket_name: string;
+}
 
-  const { flight_number, name, date_utc, rocket_name } = item;
-
+export const LaunchItem: React.FC<LaunchItemProps> = ({
+  index,
+  flight_number,
+  name,
+  date_utc,
+  rocket_name,
+}) => {
   return (
     <li key={index} className="launch-item">
       <div>
@@ -13,7 +24,9 @@ export const LaunchItem = ({ item, index }) => {
       </div>
       <div className="end-container">
         <span className="item-details">
-          <span className="launch-date">{new Moment(date_utc).format("Do MMMM YYYY")}</span>
+          <span className="launch-date">
+            {Moment(date_utc).format("Do MMMM YYYY")}
+          </span>
           <span className="rocket-name">{rocket_name}</span>
         </span>
       </div>
