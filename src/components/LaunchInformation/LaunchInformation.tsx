@@ -36,7 +36,7 @@ export const LaunchInformation = ({
           <p>No articles yet published regarding this launch</p>
         ) : (
           <span>
-            Launch coverage:&nbsp;
+            Launch Coverage:&nbsp;
             <a
               className="article-link"
               target="_blank"
