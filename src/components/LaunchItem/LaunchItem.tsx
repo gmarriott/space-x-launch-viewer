@@ -3,6 +3,11 @@ import Moment from 'moment';
 import classNames from 'classnames';
 import { MdArrowDropDown } from 'react-icons/md';
 import { LaunchInformation } from '../LaunchInformation';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+} from '@mui/material';
 
 interface LaunchItemProps {
   index: number;
@@ -34,13 +39,11 @@ export const LaunchItem = ({
   }
 
   return (
-    <div>
-      <li
-        key={index}
-        onClick={onClick}
-        className={classNames('launch-item', {
-          active: activeId === index,
-        })}
+    <Accordion className="launch-item">
+      <AccordionSummary
+        expandIcon={<MdArrowDropDown />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
       >
         <div>
           <span className="flight-number">{`#${flight_number}`}</span>
@@ -53,16 +56,9 @@ export const LaunchItem = ({
             </span>
             <span className="rocket-name">{rocket_name}</span>
           </span>
-          <div>
-            <MdArrowDropDown
-              className={classNames('expand-icon', {
-                active: activeId === index,
-              })}
-            />
-          </div>
         </div>
-      </li>
-      {activeId === index && (
+      </AccordionSummary>
+      <AccordionDetails>
         <LaunchInformation
           className={classNames('launch-details', {
             active: activeId === index,
@@ -71,7 +67,7 @@ export const LaunchItem = ({
           details={details}
           article={article}
         />
-      )}
-    </div>
+      </AccordionDetails>
+    </Accordion>
   );
 };
