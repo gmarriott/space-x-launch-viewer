@@ -1,37 +1,97 @@
 .launch-item {
-    display: flex;
-    box-shadow: RGBA(0, 0, 0, 0.25) 2px 2px 2px 2px;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  box-shadow: RGBA(0, 0, 0, 0.25) 2px 2px 2px 2px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.launch-item.active {
+  box-shadow: none;
+  border: solid #929292;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0px !important;
+}
+
+launch-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .flight-number {
-    font-size: 40px;
-    padding-left: 32px;
+  font-size: 40px;
+  padding-left: 32px;
 }
 
 .flight-name {
-    font-size: 32px;
-    padding-left: 24px;
+  font-size: 32px;
+  padding-left: 24px;
 }
 
 .end-container {
-    margin-left: auto;
-    padding-right: 16px;
+  display: flex;
+  margin-left: auto;
+  padding-right: 16px;
+}
+
+.expand-icon {
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+  font-size: 5rem;
+  align-self: center;
+  :hover {
+    cursor: pointer;
+    color: rgb(118, 115, 115);
+  }
+}
+
+.expand-icon.active {
+  transform: rotate(180deg);
+  transition: transform 0.3s linear;
 }
 
 .item-details {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .launch-date {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .rocket-name {
-    margin-left: auto;
-    font-size: 24px;
-    padding-bottom: 8px;
-    font-weight: bold;
+  margin-left: auto;
+  font-size: 24px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.launch-details {
+  font-size: large;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  overflow-wrap: break-word;
+  border: solid #929292;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: none;
+  flex-direction: row;
+  padding-left: 28px;
+  padding-right: 28px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.launch-details.active {
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+
+.article-link {
+  color: rgb(57, 57, 234);
+  :hover {
+    color: rgb(14, 14, 153);
+  }
 }

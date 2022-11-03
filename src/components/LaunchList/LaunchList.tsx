@@ -2,7 +2,13 @@ import React from 'react';
 import Moment from 'moment';
 import { LaunchItem } from '../LaunchItem';
 
+interface Links {
+  article: string;
+}
 interface Launch {
+  links: Links;
+  details: string;
+  success: boolean;
   flight_number: number;
   name: string;
   date_utc: string;
@@ -24,6 +30,18 @@ export const LaunchList = ({
   hasError,
   loading,
 }: LaunchListProps) => {
+  const [activeId, setActiveId] = React.useState<number | undefined>(
+    undefined
+  );
+
+  const onClick = (id: number) => {
+    if (id === activeId) {
+      setActiveId(undefined);
+    } else {
+      setActiveId(id);
+    }
+  };
+
   let filteredItems = [...launchItems];
 
   let launches = filteredItems.sort((a, b) => {
@@ -62,10 +80,15 @@ export const LaunchList = ({
           <LaunchItem
             key={index}
             index={index}
+            activeId={activeId}
+            onClick={() => onClick(index)}
             flight_number={launch.flight_number}
             name={launch.name}
             date_utc={launch.date_utc}
             rocket_name={launch.rocket_name}
+            launch_success={launch.success}
+            details={launch.details}
+            article={launch.links.article}
           />
         );
       })}
